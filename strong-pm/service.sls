@@ -3,7 +3,7 @@
 
 {% from "strong-pm/map.jinja" import template with context %}
 
-strong-pm-service:
+strong_pm_service:
   service.running:
     - name: {{ template.service.name }}
     - enable: True

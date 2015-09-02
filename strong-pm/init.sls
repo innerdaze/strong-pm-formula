@@ -2,5 +2,5 @@
 # vim: ft=sls
 
 include:
-  - strong-pm.install
-  - strong-pm.service
+  - strong_pm.install
+  - strong_pm.service

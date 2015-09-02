@@ -3,6 +3,6 @@
 
 {% from "strong-pm/map.jinja" import template with context %}
 
-strong-pm-pkg:
+strong_pm_pkg:
   cmd.run:
     - name: {{ strong-pm.cmd.install }} {{ strong-pm.lookup.init_manager_option }}

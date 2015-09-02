@@ -9,7 +9,7 @@ Setup variable using grains['init'] based logic, only add key:values here
 that differ from whats in defaults.yaml
 ##}
 {% set init_manager_option = salt['grains.filter_by']({
-        'upstart': '--upstart ' + salt['grains.upstart.version'],
+        'upstart': '--upstart ' + salt.get('grains:upstart:version'),
         'systemd': '--systemd',
         'default': {}
   }
