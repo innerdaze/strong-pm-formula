@@ -5,15 +5,16 @@ strong_pm:
     install: slc pm install
   service:
     name: strong-pm.service
-  base: /home/strong-pm
-  driver: direct
-  set_env: None
-  force: False
-  http_auth: None
-  metrics: None
-  dry_run: False
-  port: 8701
-  base_port: 3000
-  init_manager_option: systemd
-  upstart_version: ""
-  user: strong-pm
+  lookup:
+    base: /home/strong-pm
+    driver: direct
+    set_env: None
+    force: False
+    http_auth: None
+    metrics: None
+    dry_run: False
+    port: 8701
+    base_port: 3000
+    init_manager_option: systemd
+    upstart_version: ""
+    user: strong-pm
