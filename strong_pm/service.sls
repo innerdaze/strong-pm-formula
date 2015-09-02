@@ -5,5 +5,5 @@
 
 strong_pm_service:
   service.running:
-    - name: {{ template.service.name }}
+    - name: {{ strong_pm.service.name }}
     - enable: True
