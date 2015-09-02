@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # vim: ft=sls
 
-{% from "strong_pm/map.jinja" import template with context %}
+{% from "strong_pm/map.jinja" import strong_pm with context %}
 
 strong_pm_pkg:
   cmd.run:
