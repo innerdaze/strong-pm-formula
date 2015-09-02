@@ -3,6 +3,4 @@
 
 {% from "template/map.jinja" import template with context %}
 
-template-pkg:
-  pkg.installed:
-    - name: {{ template.pkg }}
+strong-pm-config: None
