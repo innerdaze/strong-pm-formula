@@ -5,4 +5,4 @@
 
 strong_pm_pkg:
   cmd.run:
-    - name: {{ strong_pm.cmd.install }} {{ strongs_pm.lookup.init_manager_option }}
+    - name: {{ strong_pm.cmd.install }} {{ strong_pm.lookup.init_manager_option }}
