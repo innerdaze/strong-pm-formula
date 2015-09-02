@@ -9,11 +9,11 @@ Setup variable using grains['init'] based logic, only add key:values here
 that differ from whats in defaults.yaml
 ##}
 {% set init_manager_option = salt['grains.filter_by']({
-        'upstart': '--upstart ' + salt.get('grains:upstart:version'),
+        'upstart': '--upstart ' + salt.grains.get('upstart:version', ''),
         'systemd': '--systemd',
         'default': {}
   }
-  , grain="init"
+  , grain='init'
   , merge=salt['pillar.get']('strong_pm:lookup'))
 %}
 {## Merge the flavor_map to the default settings ##}
