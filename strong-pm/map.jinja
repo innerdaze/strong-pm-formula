@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+# vim: ft=jinja
+
+{## Start with  defaults from defaults.sls ##}
+{% import_yaml 'strong-pm/defaults.yaml' as default_settings %}
+
+{##
+Setup variable using grains['init'] based logic, only add key:values here
+that differ from whats in defaults.yaml
+##}
+{% set init_manager_option = salt['grains.filter_by']({
+        'upstart': '--upstart ' + salt['grains.upstart.version'],
+        'systemd': '--systemd',
+        'default': {}
+  }
+  , grain="init"
+  , merge=salt['pillar.get']('strong_pm:lookup'))
+%}
+{## Merge the flavor_map to the default settings ##}
+{% do default_settings.strong_pm.update(init_manager_option) %}
+
+{## Merge in strong_pm:lookup pillar ##}
+{% set strong_pm = salt['pillar.get'](
+        'strong_pm',
+        default=default_settings.strong_pm,
+        merge=True
+    )
+%}
