@@ -22,8 +22,8 @@ strong_pm_pkg:
 
 strong_pm_deps_node:
   pkg.installed:
-    - node
+    - name: node
 
 strong_pm_deps_npm:
   pkg.installed:
-    - npm
+    - name: npm
