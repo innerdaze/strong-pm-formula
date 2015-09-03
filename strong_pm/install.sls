@@ -21,8 +21,12 @@ strong_pm_pkg:
       - user: {{ strong_pm.lookup.user }}
 
 strong_pm_deps_node:
+  # cmd.run:
+  #   - name: curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
   pkg.installed:
-    - name: node
+    - name: nodejs
+    - require:
+      - cmd: strong_pm_deps_node
 
 strong_pm_deps_npm:
   pkg.installed:
