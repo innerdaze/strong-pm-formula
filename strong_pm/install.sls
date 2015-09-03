@@ -11,6 +11,7 @@ strong_pm_pkg:
     - name: strongloop
     - require:
       - pkg: strong_pm_deps_npm
+      - pkg: strong_pm_deps_node
   cmd.run:
     - name: {{ strong_pm.cmd.install }} {{ strong_pm.lookup.init_manager_option }}
     - user: {{ strong_pm.lookup.user }}
