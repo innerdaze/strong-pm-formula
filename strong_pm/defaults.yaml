@@ -2,7 +2,7 @@
 # vim: ft=yaml
 strong_pm:
   cmd:
-    install: slc pm install
+    install: slc pm-install
   service:
     name: strong-pm.service
   lookup:
