@@ -1,4 +1,4 @@
-strong-pm:
+strong_pm:
   lookup:
     master: strong_pm
     base: /home/strong-pm
