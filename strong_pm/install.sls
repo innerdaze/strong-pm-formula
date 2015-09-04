@@ -25,8 +25,36 @@ strong_pm_pkg:
       # - pkg: strong_pm_deps_npm
       - pkg: strong_pm_deps_node
   cmd.run:
-    - name: {{ strong_pm.cmd.install }} {{ strong_pm.lookup.init_manager_option }}
-    - user: {{ strong_pm.lookup.user }}
+    - name: >
+      {{ strong_pm.cmd.install }}
+      {%- if strong_pm.lookup.init_manager %}
+      --{{ strong_pm.lookup.init_manager }}
+      {%- if strong_pm.lookup.init_manager is "upstart" %}
+      {{ strong_pm.lookup.upstart_version }}
+      {%- endif %}
+      {%- endif %}
+      --base {{ strong_pm.lookup.base }}
+      --driver {{ strong_pm.lookup.driver }}
+      {%- if strong_pm.lookup.set_env %}
+      --set-env {{ strong_pm.lookup.set_env }}
+      {%- endif %}
+      {%- if strong_pm.lookup.force %}
+      --force
+      {%- endif %}
+      {%- if strong_pm.lookup.http_auth %}
+      --http-auth {{ strong_pm.lookup.http_auth }}
+      {%- endif %}
+      --job-file {{ strong_pm.lookup.job_file }}
+      {%- if strong_pm.lookup.metrics %}
+      --metrics
+      {%- endif %}
+      {%- if strong_pm.lookup.dry_run %}
+      --dry-run
+      {%- endif %}
+      --port {{ strong_pm.lookup.port }}
+      --base-port {{ strong_pm.lookup.base_port }}
+      --user {{ strong_pm.lookup.user }}
+    - user: root
     - cwd: {{ strong_pm.lookup.base }}
     - require:
       - pkg: strong_pm_deps_node
