@@ -4,7 +4,7 @@ strong_pm:
   cmd:
     install: slc pm-install
   service:
-    name: strong-pm.service
+    name: strong-pm
   lookup:
     base: /home/strong-pm
     driver: direct
