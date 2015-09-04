@@ -29,7 +29,7 @@ strong_pm_pkg:
       {{ strong_pm.cmd.install }}
       {%- if strong_pm.lookup.init_manager %}
       --{{ strong_pm.lookup.init_manager }}
-      {%- if strong_pm.lookup.init_manager is "upstart" %}
+      {%- if strong_pm.lookup.init_manager == "upstart" %}
       {{ strong_pm.lookup.upstart_version }}
       {%- endif %}
       {%- endif %}
