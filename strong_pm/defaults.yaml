@@ -8,14 +8,14 @@ strong_pm:
   lookup:
     base: /home/strong-pm
     driver: direct
-    set_env: None
-    force: False
-    http_auth: None
-    metrics: None
-    dry_run: False
+    set_env: null
+    force: false
+    http_auth: null
+    metrics: null
+    dry_run: false
     port: 8701
     base_port: 3000
     init_manager: systemd
-    upstart_version: None
+    upstart_version: null
     user: strong-pm
     job_file: /etc/init/strong-pm.conf

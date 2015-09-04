@@ -38,7 +38,7 @@ strong_pm_pkg:
         {%- if strong_pm.lookup.set_env %}
         --set-env {{ strong_pm.lookup.set_env }}
         {%- endif %}
-        {%- if strong_pm.lookup.force is sameas true %}
+        {%- if strong_pm.lookup.force %}
         --force
         {%- endif %}
         {%- if strong_pm.lookup.http_auth %}
@@ -48,7 +48,7 @@ strong_pm_pkg:
         {%- if strong_pm.lookup.metrics %}
         --metrics
         {%- endif %}
-        {%- if strong_pm.lookup.dry_run is sameas true %}
+        {%- if strong_pm.lookup.dry_run %}
         --dry-run
         {%- endif %}
         --port {{ strong_pm.lookup.port }}
