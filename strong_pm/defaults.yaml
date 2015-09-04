@@ -16,6 +16,6 @@ strong_pm:
     port: 8701
     base_port: 3000
     init_manager: upstart
-    upstart_version: null
+    upstart_version: 0.6
     user: strong-pm
     job_file: /etc/init/strong-pm.conf
