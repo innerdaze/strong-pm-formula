@@ -27,7 +27,7 @@ strong_pm_pkg:
   cmd.run:
     - name: >
         {{ strong_pm.cmd.install }}
-        {%- if strong_pm.lookup.init_manager != None %}
+        {%- if strong_pm.lookup.init_manager %}
         --{{ strong_pm.lookup.init_manager }}
         {%- if strong_pm.lookup.init_manager == "upstart" %}
         {{ strong_pm.lookup.upstart_version }}
@@ -35,17 +35,17 @@ strong_pm_pkg:
         {%- endif %}
         --base {{ strong_pm.lookup.base }}
         --driver {{ strong_pm.lookup.driver }}
-        {%- if strong_pm.lookup.set_env != None %}
+        {%- if strong_pm.lookup.set_env %}
         --set-env {{ strong_pm.lookup.set_env }}
         {%- endif %}
         {%- if strong_pm.lookup.force is sameas true %}
         --force
         {%- endif %}
-        {%- if strong_pm.lookup.http_auth != None %}
+        {%- if strong_pm.lookup.http_auth %}
         --http-auth {{ strong_pm.lookup.http_auth }}
         {%- endif %}
         --job-file {{ strong_pm.lookup.job_file }}
-        {%- if strong_pm.lookup.metrics != None %}
+        {%- if strong_pm.lookup.metrics %}
         --metrics
         {%- endif %}
         {%- if strong_pm.lookup.dry_run is sameas true %}
