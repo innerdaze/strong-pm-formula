@@ -15,7 +15,7 @@ strong_pm:
     dry_run: false
     port: 8701
     base_port: 3000
-    init_manager: systemd
+    init_manager: upstart
     upstart_version: null
     user: strong-pm
     job_file: /etc/init/strong-pm.conf
