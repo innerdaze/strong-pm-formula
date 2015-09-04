@@ -54,7 +54,7 @@ strong_pm_pkg:
         --port {{ strong_pm.lookup.port }}
         --base-port {{ strong_pm.lookup.base_port }}
         --user {{ strong_pm.lookup.user }}
-    - unless: [[ -f "/etc/systemd/system/strong-pm.service" ]] && ! {{ strong_pm.lookup.force }} && echo "0"
+    - unless: `[[ -f "/etc/systemd/system/strong-pm.service" ]] && ! {{ strong_pm.lookup.force }} && echo "0"`
     - user: root
     - cwd: {{ strong_pm.lookup.base }}
     - require:
