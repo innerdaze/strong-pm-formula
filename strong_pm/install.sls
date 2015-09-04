@@ -27,28 +27,28 @@ strong_pm_pkg:
   cmd.run:
     - name: >
         {{ strong_pm.cmd.install }}
-        {%- if strong_pm.lookup.init_manager is not None %}
+        {%- if strong_pm.lookup.init_manager is not none %}
         --{{ strong_pm.lookup.init_manager }}
-        {%- if strong_pm.lookup.init_manager == "upstart" %}
+        {%- if strong_pm.lookup.init_manager is equalto "upstart" %}
         {{ strong_pm.lookup.upstart_version }}
         {%- endif %}
         {%- endif %}
         --base {{ strong_pm.lookup.base }}
         --driver {{ strong_pm.lookup.driver }}
-        {%- if strong_pm.lookup.set_env is not None %}
+        {%- if strong_pm.lookup.set_env is not none %}
         --set-env {{ strong_pm.lookup.set_env }}
         {%- endif %}
-        {%- if strong_pm.lookup.force is True %}
+        {%- if strong_pm.lookup.force is sameas true %}
         --force
         {%- endif %}
-        {%- if strong_pm.lookup.http_auth is not None %}
+        {%- if strong_pm.lookup.http_auth is not none %}
         --http-auth {{ strong_pm.lookup.http_auth }}
         {%- endif %}
         --job-file {{ strong_pm.lookup.job_file }}
-        {%- if strong_pm.lookup.metrics is not None %}
+        {%- if strong_pm.lookup.metrics is not none %}
         --metrics
         {%- endif %}
-        {%- if strong_pm.lookup.dry_run is True %}
+        {%- if strong_pm.lookup.dry_run is sameas true %}
         --dry-run
         {%- endif %}
         --port {{ strong_pm.lookup.port }}
