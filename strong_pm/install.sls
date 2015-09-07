@@ -48,6 +48,6 @@ strong_pm_pkg:
     - user: root
     - cwd: {{ strong_pm.lookup.base }}
     - require:
-      - pkg: strong_pm_deps_node
+      - pkg: nodejs
       - npm: strongloop
       - user: {{ strong_pm.lookup.user }}
