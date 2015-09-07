@@ -3,6 +3,7 @@
 
 include:
   - nodejs
+  - strongloop
 
 {% from "strong_pm/map.jinja" import strong_pm with context %}
 strong_pm_user:
@@ -10,10 +11,6 @@ strong_pm_user:
     - name: {{ strong_pm.lookup.user }}
 
 strong_pm_pkg:
-  npm.installed:
-    - name: strongloop
-    - require:
-      - pkg: nodejs
   cmd.run:
     - name: >
         {{ strong_pm.cmd.install }}

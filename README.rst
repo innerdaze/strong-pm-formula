@@ -21,7 +21,8 @@ Available states
 
 Installs the template package, and starts the associated template service.
 
-Dependencies
-============
+Formula Dependencies
+====================
 
-pkg: nodejs
+nodejs - To be provided by lsdriscoll
+strongloop - To be provided by lsdriscoll
