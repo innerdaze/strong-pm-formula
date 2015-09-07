@@ -20,3 +20,8 @@ Available states
 ------------
 
 Installs the template package, and starts the associated template service.
+
+Dependencies
+============
+
+pkg: nodejs
